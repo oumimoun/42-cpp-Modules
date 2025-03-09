@@ -9,7 +9,7 @@ class Form;
 
 class Bureaucrat
 {
-public:
+private:
 	const std::string _name;
 	int _grade;
 public:
@@ -25,19 +25,13 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			const char* what() const throw()
-			{
-				return "GradeTooHighException: Grade is too high!";
-			}
+			const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			const char* what() const throw()
-			{
-				return "GradeTooLowException: Grade is too low!";
-			}
+			const char* what() const throw();
 	};
 
 	void incrementGrade();

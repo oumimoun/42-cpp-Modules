@@ -151,7 +151,7 @@ void PhoneBook::search(void) const
         std::cerr << "Invalid index. Please enter a number between 1 and 8." << std::endl;
         return;
     }
-    index = std::stoi(str);
+    index = atoi(str.c_str());
 
     if (index < 1 || index > 8 || _contacts[index - 1].getFirstName().empty())
     {

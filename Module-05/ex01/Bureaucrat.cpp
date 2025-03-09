@@ -2,6 +2,16 @@
 
 Bureaucrat::Bureaucrat(void) : _name("_pp"), _grade(150) {}
 
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "GradeTooHighException: Grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "GradeTooLowException: Grade is too low!";
+}
+
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {
 	if (grade < 1)
